@@ -2,19 +2,25 @@
   "name": "@yetric/npm-typescript-package-base",
   "version": "1.0.0",
   "description": "A template for building NPM packages in TypeScript",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.{ts,js}\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yetric/npm-typescript-package-base.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["npm", "typescript", "module", "skeleton"],
+  "author": "Mattias Hising <mattias@yetric.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yetric/npm-typescript-package-base/issues"
