@@ -1,10 +1,11 @@
 {
-  "name": "npm-typescript-package-base",
+  "name": "@yetric/npm-typescript-package-base",
   "version": "1.0.0",
-  "description": "",
+  "description": "A template for building NPM packages in TypeScript",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.{ts,js}\"",
     "lint": "tslint -p tsconfig.json"
   },
@@ -20,10 +21,15 @@
   },
   "homepage": "https://github.com/yetric/npm-typescript-package-base#readme",
   "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
+    "ts-jest": "^25.5.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ]
 }
