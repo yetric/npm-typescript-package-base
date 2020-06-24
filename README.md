@@ -1,1 +1,1 @@
-# npm-typescript-package-base
+# NPM Base
