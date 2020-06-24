@@ -54,5 +54,13 @@
   "files": [
     "lib/**/*"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js}": "prettier --write"
+  }
 }
